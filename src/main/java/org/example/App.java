@@ -6,8 +6,20 @@ package org.example;
  */
 public class App 
 {
+
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        boolean quit = false;
+        do{
+            mainMenu pMM = new mainMenu();// handle main menu
+            pMM.pMM();
+            //if (quit) break; // ends the program
+
+
+
+
+        }while(quit==false);
+
+
     }
 }
