@@ -9,10 +9,11 @@ public class App
 
     public static void main( String[] args )
     {
+        int answer;
         boolean quit = false;
         do{
             mainMenu pMM = new mainMenu();// handle main menu
-            pMM.pMM();
+            answer = pMM.pMM();
             //if (quit) break; // ends the program
 
 
