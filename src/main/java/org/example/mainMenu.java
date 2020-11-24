@@ -17,6 +17,7 @@ public class mainMenu {
         System.out.println("4. Confirm buy");
         System.out.printf("Money in deposition: ");
         System.out.println(""+ amount);
+        System.out.println("");
 
 
 
