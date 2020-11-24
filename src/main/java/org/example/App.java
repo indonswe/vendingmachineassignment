@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -13,8 +15,12 @@ public class App
         boolean quit = false;
         String name= "Machine";
         int amount = 0;
+        String question;
+        int answerInt;
 
         Product machine = new Product(name,amount);
+        Vendingmachine m = new Vendingmachine();
+
 
         do{
             mainMenu pMM = new mainMenu();// handle main menu
@@ -23,6 +29,11 @@ public class App
 
                 break; // ends the program
             }else if(answer == 2){
+                System.out.println("How much money do you want to deposit: ");
+                Scanner scNr1 = new Scanner(System.in);
+                question = scNr1.nextLine(); // holds actual input
+                answerInt = Integer.parseInt(question);
+                m.addCurrency(answerInt);
 
             }
 
