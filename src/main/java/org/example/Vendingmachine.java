@@ -11,6 +11,7 @@ interface vendingMachineInterface{
 
 public class Vendingmachine implements vendingMachineInterface{
 
+    private static Product[] productArray   = new Product[0];
     @Override
     public void addCurrency(int amount) {
 

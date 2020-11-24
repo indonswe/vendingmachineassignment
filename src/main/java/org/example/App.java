@@ -11,10 +11,23 @@ public class App
     {
         int answer;
         boolean quit = false;
+        String name= "Machine";
+        int amount = 0;
+        Product machine = new Product(name,amount);
+
         do{
             mainMenu pMM = new mainMenu();// handle main menu
             answer = pMM.pMM();
-            //if (quit) break; // ends the program
+            if (answer == 1) {
+
+                break; // ends the program
+            }else if(answer == 2){
+
+            }
+
+
+
+
 
 
 
