@@ -6,19 +6,18 @@ public class mainMenu {
     boolean quit=false;
     String answer;
     int answerInt;
-    int money;
+    int amount;
     int value;
     public mainMenu (){
     }
-    public int pMM(){
+    public int pMM(int amount){
         System.out.println("1. Quit without buying");
         System.out.println("2. Put in money");
         System.out.println("3. Choose products");
         System.out.println("4. Confirm buy");
         System.out.printf("Money in deposition: ");
-        System.out.println(""+ money);
-        System.out.printf("Value in shoppingcart: ");
-        System.out.println(""+ value);
+        System.out.println(""+ amount);
+
 
 
 
