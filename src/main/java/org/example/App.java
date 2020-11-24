@@ -19,11 +19,13 @@ public class App
         int answerInt;
 
         Product machine = new Product(name,amount);
-        Vendingmachine m = new Vendingmachine();
+        Vendingmachine m = new Vendingmachine(amount);
+        //m.addCurrency(0);
 
 
         do{
             mainMenu pMM = new mainMenu();// handle main menu
+            amount = m.getBalance();
             answer = pMM.pMM(amount);
             if (answer == 1) {
 
