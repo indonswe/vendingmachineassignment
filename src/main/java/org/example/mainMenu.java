@@ -23,7 +23,9 @@ public class mainMenu {
 
 
         answer = wFA();
+        System.out.println(answer);
         answerInt = Integer.parseInt(answer);
+        System.out.println(answerInt);
         return answerInt;
     }
     public String wFA(){

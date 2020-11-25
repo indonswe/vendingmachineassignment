@@ -28,6 +28,7 @@ public class App
             mainMenu pMM = new mainMenu();// handle main menu
             amount = m.getBalance();
             answer = pMM.pMM(amount);
+            System.out.println(answer);
             if (answer == 1) {
                 break; // ends the program
             } else if (answer == 2) {
@@ -39,12 +40,13 @@ public class App
                 System.out.println(answerInt);
 
             } else if (answer == 5) {
-                System.out.println("How much money do you want to deposit: ");
-                Scanner scNr1 = new Scanner(System.in);
-                question = scNr1.nextLine(); // holds actual input
-                answerInt = Integer.parseInt(question);
-                m.getProducts();
-                System.out.println(answerInt);
+                String[] getProducts = m.getProducts();
+                //getProducts.
+                for (int i = 0; i < getProducts.length-1; i++) {
+
+                    System.out.println(getProducts[i].toString());
+                }
+
             }
         }while(quit==false);
     }

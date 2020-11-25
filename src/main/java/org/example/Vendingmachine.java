@@ -30,8 +30,10 @@ public class Vendingmachine implements vendingMachineInterface{
             //}
         //};
         Snickers newSnickers = new Snickers("Snickers", 8);
+        System.out.println(newSnickers.examine());
         Vendingmachine.productArray[0]= newMachine;
         Vendingmachine.productArray[1]= newSnickers;
+        System.out.println(productArray[1].examine());
 
         //Product[] newArray = Arrays.copyOf(productArray, productArray.length + 1); //Make bigger array
         //newArray[newArray.length - 1] = newPerson; //Put the new Person in the bigger array
@@ -72,8 +74,9 @@ public class Vendingmachine implements vendingMachineInterface{
     @Override
     public String[] getProducts() {
         Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
+        System.out.println(onlyProductsArray[0]);
         String[]stringProductsArray= new String[onlyProductsArray.length];
-        for (int i = 0, j = 1; i < productArray.length; i++, j++) {
+        for (int i = 0, j = 1; i < productArray.length-1; i++, j++) {
             onlyProductsArray[i]= productArray[j];
             stringProductsArray[1]=onlyProductsArray.toString();
         }
