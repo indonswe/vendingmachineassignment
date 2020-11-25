@@ -13,10 +13,10 @@ interface vendingMachineInterface{
 
 public class Vendingmachine implements vendingMachineInterface{
 
-    private static Product[] productArray   = new Product[9];
+    private static Product[] productArray   = new Product[2];
 
     public Vendingmachine(){
-        Product newMachine = new Product("Machine", 0);
+        Machine newMachine = new Machine("Machine", 0);
         //Product newChocolade = new Product("Snickers", 8);
         //Chocolade newChocolade = new Chocolade("Snickers", 8) {
             //@Override
@@ -74,11 +74,16 @@ public class Vendingmachine implements vendingMachineInterface{
     @Override
     public String[] getProducts() {
         Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
-        System.out.println(onlyProductsArray[0]);
+        //System.out.println(onlyProductsArray[0]);
         String[]stringProductsArray= new String[onlyProductsArray.length];
+        System.out.println(productArray[1].examine());
+        System.out.println(productArray.length);
         for (int i = 0, j = 1; i < productArray.length-1; i++, j++) {
             onlyProductsArray[i]= productArray[j];
-            stringProductsArray[1]=onlyProductsArray.toString();
+            System.out.println((j));
+            System.out.println(productArray[j].examine());
+            stringProductsArray[i]=onlyProductsArray[i].examine();
+            System.out.println(stringProductsArray[i]);
         }
         return stringProductsArray;
         //return onlyProductsArray;

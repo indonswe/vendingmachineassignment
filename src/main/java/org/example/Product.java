@@ -1,6 +1,6 @@
 package org.example;
 
-public class Product {
+abstract class Product {
     String name;
     int amount;
     int productId;
@@ -17,9 +17,7 @@ public class Product {
 
     }
 
-    public String examine() {
-        return null;
-    }
+    public abstract String examine();
 
 
 }
