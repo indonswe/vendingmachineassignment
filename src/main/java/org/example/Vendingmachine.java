@@ -13,21 +13,18 @@ interface vendingMachineInterface{
 
 public class Vendingmachine implements vendingMachineInterface{
 
-    private static Product[] productArray   = new Product[0];
+    private static Product[] productArray   = new Product[9];
 
     public Vendingmachine(){
-        Product newPerson = new Product("Machine", 0);
-        //newPerson.setFirstName(firstName);
-        //newPerson.setLastName(lastName);
-        Product[] newArray = Arrays.copyOf(productArray, productArray.length + 1); //Make bigger array
-        newArray[newArray.length - 1] = newPerson; //Put the new Person in the bigger array
-        Vendingmachine.productArray = newArray; //Makes the Person array same as the bigger array
-        //return newPerson; //Returns new Person
+        Product newMachine = new Product("Machine", 0);
+        Product newChocolade = new Product("Snickers", 0);
+        Vendingmachine.productArray[0]= newMachine;
+        Vendingmachine.productArray[1]= newChocolade;
 
-        //this.addCurrency(0);
-        //this.addCurrency(amount);
-        //Product newProduct = new Product("a",amount);
-        //productArray[productArray.length-1] = newProduct;
+        //Product[] newArray = Arrays.copyOf(productArray, productArray.length + 1); //Make bigger array
+        //newArray[newArray.length - 1] = newPerson; //Put the new Person in the bigger array
+       // Vendingmachine.productArray = newArray; //Makes the Person array same as the bigger array
+
 
     }
 
@@ -60,6 +57,11 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public String[] getProducts() {
-        return new String[0];
+        Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
+        for (int i = 0, j = 1; i < productArray.length; i++, j++) {
+            onlyProductsArray[i]= productArray[j];
+        }
+
+        return onlyProductsArray;
     }
 }

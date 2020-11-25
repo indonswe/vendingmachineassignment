@@ -18,21 +18,17 @@ public class App
         String question;
         int answerInt;
 
-        //Product machine = new Product(name,amount);
-        //Product[] first = new Product[0];
-        //Product[0] first = machine;
+
         Vendingmachine m = new Vendingmachine();
-        //Product[]
-        //m.addCurrency(0);
+
+
 
 
         do{
             mainMenu pMM = new mainMenu();// handle main menu
             amount = m.getBalance();
-            System.out.println(amount);
             answer = pMM.pMM(amount);
             if (answer == 1) {
-
                 break; // ends the program
             }else if(answer == 2){
                 System.out.println("How much money do you want to deposit: ");
