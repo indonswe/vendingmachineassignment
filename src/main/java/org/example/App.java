@@ -24,13 +24,13 @@ public class App
 
 
 
-        do{
+        do {
             mainMenu pMM = new mainMenu();// handle main menu
             amount = m.getBalance();
             answer = pMM.pMM(amount);
             if (answer == 1) {
                 break; // ends the program
-            }else if(answer == 2){
+            } else if (answer == 2) {
                 System.out.println("How much money do you want to deposit: ");
                 Scanner scNr1 = new Scanner(System.in);
                 question = scNr1.nextLine(); // holds actual input
@@ -38,17 +38,25 @@ public class App
                 m.addCurrency(answerInt);
                 System.out.println(answerInt);
 
+            } else if (answer == 5) {
+                System.out.println("How much money do you want to deposit: ");
+                Scanner scNr1 = new Scanner(System.in);
+                question = scNr1.nextLine(); // holds actual input
+                answerInt = Integer.parseInt(question);
+                m.getProducts();
+                System.out.println(answerInt);
             }
-
-
-
-
-
-
-
-
         }while(quit==false);
-
-
     }
+
+
+
+
+
+
+
+
+
+
+
 }
