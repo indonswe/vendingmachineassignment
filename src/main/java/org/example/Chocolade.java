@@ -16,7 +16,7 @@ class Snickers extends Chocolade{
 
     @Override
     public String examine(){
-        return toString("Pris 5 kr, vikt 100 gram, kalorier 50 kcal.");
+        return toString("Snickers, vikt: 100 gram, pris: 5 kr, kcal: 50.");
     }
 
     private String toString(String s) {

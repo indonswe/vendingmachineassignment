@@ -13,31 +13,16 @@ interface vendingMachineInterface{
 
 public class Vendingmachine implements vendingMachineInterface{
 
+
     private static Product[] productArray   = new Product[2];
 
     public Vendingmachine(){
         Machine newMachine = new Machine("Machine", 0);
-        //Product newChocolade = new Product("Snickers", 8);
-        //Chocolade newChocolade = new Chocolade("Snickers", 8) {
-            //@Override
-            //public String examine() {
-                //return null;
-            //}
-
-            //@Override
-            //public String use() {
-                //return null;
-            //}
-        //};
         Snickers newSnickers = new Snickers("Snickers", 8);
-        System.out.println(newSnickers.examine());
+
         Vendingmachine.productArray[0]= newMachine;
         Vendingmachine.productArray[1]= newSnickers;
-        System.out.println(productArray[1].examine());
 
-        //Product[] newArray = Arrays.copyOf(productArray, productArray.length + 1); //Make bigger array
-        //newArray[newArray.length - 1] = newPerson; //Put the new Person in the bigger array
-       // Vendingmachine.productArray = newArray; //Makes the Person array same as the bigger array
 
 
     }
@@ -50,7 +35,11 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public Product request(int productNumber) {
-        return null;
+        //Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
+        //String[]stringProductsArray= new String[onlyProductsArray.length];
+        Product answer = productArray[productNumber+1];
+
+        return answer;
     }
 
     @Override
@@ -74,16 +63,14 @@ public class Vendingmachine implements vendingMachineInterface{
     @Override
     public String[] getProducts() {
         Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
-        //System.out.println(onlyProductsArray[0]);
+
         String[]stringProductsArray= new String[onlyProductsArray.length];
-        System.out.println(productArray[1].examine());
-        System.out.println(productArray.length);
+
         for (int i = 0, j = 1; i < productArray.length-1; i++, j++) {
             onlyProductsArray[i]= productArray[j];
-            System.out.println((j));
-            System.out.println(productArray[j].examine());
+
             stringProductsArray[i]=onlyProductsArray[i].examine();
-            System.out.println(stringProductsArray[i]);
+
         }
         return stringProductsArray;
         //return onlyProductsArray;

@@ -17,6 +17,7 @@ public class App
         int amount = 0;
         String question;
         int answerInt;
+        String answerString;
 
 
         Vendingmachine m = new Vendingmachine();
@@ -38,13 +39,25 @@ public class App
                 answerInt = Integer.parseInt(question);
                 m.addCurrency(answerInt);
                 System.out.println(answerInt);
+            } else if (answer == 3) {
+                System.out.println("Buy/examine product(enter productId): ");
+                Scanner scNr1 = new Scanner(System.in);
+                question = scNr1.nextLine(); // holds actual input
+                answerInt = Integer.parseInt(question);
+                Product answerProduct = m.request(answerInt);
+                System.out.println(answerProduct.toString());
+                System.out.println(answerProduct.examine);
+                System.out.println("Do you want to buy the product(y/n)? ");
+                scNr1 = new Scanner(System.in);
+                question = scNr1.nextLine(); // holds actual input
+                answerString = Integer.parseInt(question);
 
             } else if (answer == 5) {
                 String[] getProducts = m.getProducts();
-                //getProducts.
-                for (int i = 0; i < getProducts.length-1; i++) {
+                System.out.println(getProducts.length);
+                for (int i = 0; i < getProducts.length; i++) {
 
-                    System.out.println(getProducts[i].toString());
+                    System.out.println(getProducts[i]);
                 }
 
             }
