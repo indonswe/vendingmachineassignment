@@ -37,7 +37,7 @@ public class Vendingmachine implements vendingMachineInterface{
     public Product request(int productNumber) {
         //Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
         //String[]stringProductsArray= new String[onlyProductsArray.length];
-        Product answer = productArray[productNumber+1];
+        Product answer = productArray[productNumber];
 
         return answer;
     }

@@ -46,12 +46,14 @@ public class App
                 question = scNr1.nextLine(); // holds actual input
                 answerInt = Integer.parseInt(question);
                 Product answerProduct = m.request(answerInt);
+                answerString = answerProduct.examine;
                 System.out.println(answerProduct.toString());
-                System.out.println(answerProduct.examine);
+                System.out.println(answerString);
                 System.out.println("Do you want to buy the product(y/n)? ");
                 scNr1 = new Scanner(System.in);
                 question = scNr1.nextLine(); // holds actual input
-                if(question=="y") {
+                char questionCharacter = question.charAt(0);
+                if(questionCharacter=='y') {
                     amount = m.getBalance();
                     int price = answerProduct.amount;
                     if (price<amount){
@@ -59,7 +61,8 @@ public class App
                         System.out.println("Do you want to consume the product? ");
                         scNr1 = new Scanner(System.in);
                         question = scNr1.nextLine(); // holds actual input
-                        if(question=="y") {
+                        questionCharacter = question.charAt(0);
+                        if(questionCharacter=='y') {
                             answerProduct.examine();
                         }
                     }else{
