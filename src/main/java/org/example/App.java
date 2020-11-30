@@ -21,8 +21,8 @@ public class App
 
 
         Vendingmachine m = new Vendingmachine();
-        Snickers snickers = new Snickers("Snickers",5);
-
+        //Snickers snickers = new Snickers("Snickers",5);
+        //Paradis paradis = new Paradis("Paradis", 39);
 
 
 
@@ -30,7 +30,7 @@ public class App
             mainMenu pMM = new mainMenu();// handle main menu
             amount = m.getBalance();
             answer = pMM.pMM(amount);
-            System.out.println(answer);
+            //System.out.println(answer);
             if (answer == 1) {
                 break; // ends the program
             } else if (answer == 2) {
@@ -46,8 +46,8 @@ public class App
                 question = scNr1.nextLine(); // holds actual input
                 answerInt = Integer.parseInt(question);
                 Product answerProduct = m.request(answerInt);
-                answerString = answerProduct.examine;
-                System.out.println(answerProduct.toString());
+                answerString = answerProduct.examine();
+                //System.out.println(answerProduct.toString());
                 System.out.println(answerString);
                 System.out.println("Do you want to buy the product(y/n)? ");
                 scNr1 = new Scanner(System.in);
@@ -58,12 +58,14 @@ public class App
                     int price = answerProduct.amount;
                     if (price<amount){
                         m.addCurrency(-amount);
+                        System.out.println("Congratulations, you bought the product");
                         System.out.println("Do you want to consume the product? ");
                         scNr1 = new Scanner(System.in);
                         question = scNr1.nextLine(); // holds actual input
                         questionCharacter = question.charAt(0);
                         if(questionCharacter=='y') {
-                            answerProduct.examine();
+                            answerString = answerProduct.use();
+                            System.out.println(answerString);
                         }
                     }else{
                         System.out.println("You need to deposit more money to buy this product");

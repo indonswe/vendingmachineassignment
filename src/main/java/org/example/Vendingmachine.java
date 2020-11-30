@@ -14,14 +14,16 @@ interface vendingMachineInterface{
 public class Vendingmachine implements vendingMachineInterface{
 
 
-    private static Product[] productArray   = new Product[2];
+    private static Product[] productArray   = new Product[3];
 
     public Vendingmachine(){
         Machine newMachine = new Machine("Machine", 0);
         Snickers newSnickers = new Snickers("Snickers", 8);
+        Paradis paradis = new Paradis("Paradis", 39);
 
         Vendingmachine.productArray[0]= newMachine;
         Vendingmachine.productArray[1]= newSnickers;
+        Vendingmachine.productArray[2]= paradis;
 
 
 
@@ -29,7 +31,9 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public void addCurrency(int amount) {
+        System.out.println(amount);
         productArray[0].amount = productArray[0].amount+ amount;
+        System.out.println(productArray[0].amount);
         //productArray[productArray.length-1].amount = productArray[productArray.length-1].amount + amount;
     }
 
@@ -72,6 +76,7 @@ public class Vendingmachine implements vendingMachineInterface{
             stringProductsArray[i]=onlyProductsArray[i].examine();
 
         }
+        System.out.println(stringProductsArray.length);
         return stringProductsArray;
         //return onlyProductsArray;
     }

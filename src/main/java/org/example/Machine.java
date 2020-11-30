@@ -9,4 +9,8 @@ public class Machine extends Product {
     public String examine() {
         return null;
     }
+    @Override
+    public String use(){
+       return null;
+    }
 }
