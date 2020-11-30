@@ -67,16 +67,17 @@ public class Vendingmachine implements vendingMachineInterface{
     @Override
     public String[] getProducts() {
         Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
-
+        String prodIdAndNames;
         String[]stringProductsArray= new String[onlyProductsArray.length];
 
         for (int i = 0, j = 1; i < productArray.length-1; i++, j++) {
             onlyProductsArray[i]= productArray[j];
+            prodIdAndNames = ("Productid: "+onlyProductsArray[i].productId+" Name: "+onlyProductsArray[i].name);
 
-            stringProductsArray[i]=onlyProductsArray[i].examine();
+            stringProductsArray[i]=prodIdAndNames;
 
         }
-        System.out.println(stringProductsArray.length);
+        //System.out.println(stringProductsArray.length);
         return stringProductsArray;
         //return onlyProductsArray;
     }

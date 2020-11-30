@@ -57,7 +57,7 @@ public class App
                     amount = m.getBalance();
                     int price = answerProduct.amount;
                     if (price<amount){
-                        m.addCurrency(-amount);
+                        m.addCurrency(-price);
                         System.out.println("Congratulations, you bought the product");
                         System.out.println("Do you want to consume the product? ");
                         scNr1 = new Scanner(System.in);
