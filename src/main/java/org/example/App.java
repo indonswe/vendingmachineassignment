@@ -21,6 +21,7 @@ public class App
 
 
         Vendingmachine m = new Vendingmachine();
+        Snickers snickers = new Snickers("Snickers",5);
 
 
 
@@ -50,7 +51,24 @@ public class App
                 System.out.println("Do you want to buy the product(y/n)? ");
                 scNr1 = new Scanner(System.in);
                 question = scNr1.nextLine(); // holds actual input
-                answerString = Integer.parseInt(question);
+                if(question=="y") {
+                    amount = m.getBalance();
+                    int price = answerProduct.amount;
+                    if (price<amount){
+                        m.addCurrency(-amount);
+                        System.out.println("Do you want to consume the product? ");
+                        scNr1 = new Scanner(System.in);
+                        question = scNr1.nextLine(); // holds actual input
+                        if(question=="y") {
+                            answerProduct.examine();
+                        }
+                    }else{
+                        System.out.println("You need to deposit more money to buy this product");
+                    }
+
+                }else {
+
+                }
 
             } else if (answer == 5) {
                 String[] getProducts = m.getProducts();
