@@ -32,23 +32,51 @@ public class Vendingmachine implements vendingMachineInterface{
     @Override
     public void addCurrency(int amount) {
         System.out.println(amount);
+        if (amount>-1){
+            //enum money{1,2,5,10,20,50,100,200,500,100}
+           int c = new cashInterface(1);
+            System.out.println(c);
+        switch (amount) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 5:
+                break;
+            case 10:
+                break;
+            case 20:
+                break;
+            case 50:
+                break;
+            case 100:
+                break;
+            case 200:
+                break;
+            case 500:
+                break;
+            case 1000:
+                break;
+            default:
+                System.out.println("Input error");
+                System.out.println("The machine accepts the following denominations");
+                System.out.println("1kr, 2kr, 5kr, 10kr, 20kr, 50kr, 100kr, 200kr, 500kr, 1000kr.");
+        }
+        }else{ }
         productArray[0].amount = productArray[0].amount+ amount;
-        System.out.println(productArray[0].amount);
-        //productArray[productArray.length-1].amount = productArray[productArray.length-1].amount + amount;
     }
 
     @Override
     public Product request(int productNumber) {
-        //Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
-        //String[]stringProductsArray= new String[onlyProductsArray.length];
         Product answer = productArray[productNumber];
-
         return answer;
     }
 
     @Override
     public int endSession() {
-        return 0;
+        int amount = productArray[0].amount;
+        productArray[0].amount = 0;
+        return amount;
     }
 
     @Override
