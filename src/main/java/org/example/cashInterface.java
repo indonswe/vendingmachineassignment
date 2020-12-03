@@ -26,7 +26,7 @@ public class cashInterface {
             money[i]=10;
         }
     }
-    public void depositMoneySlot(int deposit) {
+    public int depositMoneySlot(int deposit) {
         switch (deposit) {
             case 1:
                 money[0] = money[0] + 1;
@@ -63,11 +63,13 @@ public class cashInterface {
                 System.out.println("The machine accepts the following denominations:");
                 System.out.println("1kr, 2kr, 5kr, 10kr, 20kr, 50kr, 100kr, 200kr, 500kr, 1000kr.");
                 System.out.println("Put in the money one at a time followed by enter.");
+                return 0;
         }
+        return deposit;
     }
     public void giveMoneyBack(int amount) {
         do {
-            System.out.println("You will get " + amount + " back.");
+            System.out.println("You will get " + amount + " back. ");
             if (amount > 1000) {
                 money[0] = money[0] + 1;
                 amount = amount - 1000;

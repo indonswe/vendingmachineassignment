@@ -33,7 +33,7 @@ public class Vendingmachine implements vendingMachineInterface{
     public void addCurrency(int amount) {
         System.out.println(amount);
         if (amount>-1){
-            money.depositMoneySlot(amount);
+           amount = money.depositMoneySlot(amount);
         }else{ }
         productArray[0].amount = productArray[0].amount+ amount;
     }
@@ -53,7 +53,8 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public String getDescription(int productNumber) {
-        return null;
+        String getDes = productArray[productNumber].examine;
+        return getDes;
     }
 
     @Override

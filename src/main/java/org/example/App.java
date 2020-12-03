@@ -31,16 +31,16 @@ public class App
             amount = m.getBalance();
             answer = pMM.pMM(amount);
             //System.out.println(answer);
-            if (answer == 1) {
+            if (answer == 5) {
                 break; // ends the program
-            } else if (answer == 2) {
+            } else if (answer == 3) {
                 System.out.println("How much money do you want to deposit: ");
                 Scanner scNr1 = new Scanner(System.in);
                 question = scNr1.nextLine(); // holds actual input
                 answerInt = Integer.parseInt(question);
                 m.addCurrency(answerInt);
                 System.out.println(answerInt);
-            } else if (answer == 3) {
+            } else if (answer == 4) {
                 System.out.println("Buy/examine product(enter productId): ");
                 Scanner scNr1 = new Scanner(System.in);
                 question = scNr1.nextLine(); // holds actual input
@@ -75,7 +75,7 @@ public class App
 
                 }
 
-            } else if (answer == 5) {
+            } else if (answer == 1) {
                 String[] getProducts = m.getProducts();
                 System.out.println(getProducts.length);
                 for (int i = 0; i < getProducts.length; i++) {
@@ -83,6 +83,17 @@ public class App
                     System.out.println(getProducts[i]);
                 }
 
+            }else if (answer == 6){
+
+            } else if (answer == 2) {
+                System.out.println("Examine product(enter productId): ");
+                Scanner scNr1 = new Scanner(System.in);
+                question = scNr1.nextLine(); // holds actual input
+                answerInt = Integer.parseInt(question);
+                Product answerProduct = m.request(answerInt);
+                answerString = answerProduct.examine();
+                //System.out.println(answerProduct.toString());
+                System.out.println(answerString);
             }
         }while(quit==false);
     }
