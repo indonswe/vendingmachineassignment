@@ -66,8 +66,50 @@ public class cashInterface {
         }
     }
     public void giveMoneyBack(int amount){
-    if (amount>)
-    }
+        do {
+            if (amount>1000) {
+                money[0] = money[0] + 1;
+                amount = amount - 1000;
+                System.out.println("Machine output 1000kr");
+            }else if(amount>500){
+                money[0] = money[0] + 1;
+                amount = amount - 1000;
+                System.out.println("Machine output 500kr");
+            }else if(amount>500){
+                money[0] = money[0] + 1;
+                amount = amount - 1000;
+                System.out.println("Machine output 500kr");
+            }else if(amount>500){
+                money[0] = money[0] + 1;
+                amount = amount - 1000;
+                System.out.println("Machine output 500kr");
+            }else if(amount>500){
+            money[0] = money[0] + 1;
+            amount = amount - 1000;
+            System.out.println("Machine output 500kr");
+            }else if(amount>500){
+            money[0] = money[0] + 1;
+            amount = amount - 1000;
+            System.out.println("Machine output 500kr");
+            }else if(amount>5){
+            money[3] = money[3] - 10;
+            amount = amount - 10;
+            System.out.println("Machine output 10kr");
+            }else if(amount>2){
+            money[2] = money[2] - 5;
+            amount = amount - 5;
+            System.out.println("Machine output 5kr");
+            }else if(amount>1){
+            money[1] = money[1] - 2;
+            amount = amount - 2;
+            System.out.println("Machine output 2kr");
+            }else if(amount>0){
+            money[0] = money[0] - 1;
+            amount = amount - 1;
+            System.out.println("Machine output 1kr");
+            }
+    }while(amount>0);
+
     public void resetCashInterface(){
         for(int i=0;i<money.length;i++){
             money[i]=0;
