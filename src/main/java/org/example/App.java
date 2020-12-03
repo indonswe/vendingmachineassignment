@@ -32,6 +32,8 @@ public class App
             answer = pMM.pMM(amount);
             //System.out.println(answer);
             if (answer == 5) {
+                amount = m.getBalance();
+                m.money.giveMoneyBack(amount);
                 break; // ends the program
             } else if (answer == 3) {
                 System.out.println("How much money do you want to deposit: ");

@@ -112,6 +112,7 @@ public class cashInterface {
                 System.out.println("Machine output 1kr");
             }
         } while (amount > 0);
+        resetCashInterface();
     }
     public void resetCashInterface(){
         for(int i=0;i<money.length;i++){

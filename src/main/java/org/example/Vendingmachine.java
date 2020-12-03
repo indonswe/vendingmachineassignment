@@ -24,6 +24,7 @@ public class Vendingmachine implements vendingMachineInterface{
         Vendingmachine.productArray[0]= newMachine;
         Vendingmachine.productArray[1]= newSnickers;
         Vendingmachine.productArray[2]= paradis;
+        System.out.println("pid: " + productArray[1].productId);
 
 
 
