@@ -43,7 +43,7 @@ public class App
                 m.addCurrency(answerInt);
                 System.out.println(answerInt);
             } else if (answer == 4) {
-                System.out.println("Buy/examine product(enter productId): ");
+                System.out.println("Buy product(enter productId): ");
                 Scanner scNr1 = new Scanner(System.in);
                 question = scNr1.nextLine(); // holds actual input
                 answerInt = Integer.parseInt(question);
@@ -86,7 +86,7 @@ public class App
                 }
 
             }else if (answer == 6){
-
+                m.money.cashByUser();
             } else if (answer == 2) {
                 System.out.println("Examine product(enter productId): ");
                 Scanner scNr1 = new Scanner(System.in);

@@ -21,10 +21,18 @@ public class Vendingmachine implements vendingMachineInterface{
         Machine newMachine = new Machine("Machine", 0);
         Snickers newSnickers = new Snickers("Snickers", 8);
         Paradis paradis = new Paradis("Paradis", 39);
+        Cocacola cocacola = new Cocacola("Cocalcola", 13);
+        Water water = new Water("Water", 5);
+        Zinc zinc = new Zinc("Zinc", 50);
+        Quercetin quercetin = new Quercetin("Quercetin", 300);
         Vendingmachine.productArray[0]= newMachine;
         Vendingmachine.productArray[1]= newSnickers;
         Vendingmachine.productArray[2]= paradis;
-        System.out.println("pid: " + productArray[1].productId);
+        Vendingmachine.productArray[3]= cocacola;
+        Vendingmachine.productArray[4]= water;
+        Vendingmachine.productArray[5]= zinc;
+        Vendingmachine.productArray[6]= quercetin;
+
 
 
 

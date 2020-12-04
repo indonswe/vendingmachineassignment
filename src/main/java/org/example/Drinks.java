@@ -6,7 +6,14 @@ abstract class Drinks extends Product {
     }
 
     public abstract String examine();
-    public abstract String use();
+    private String toString(String s) {
+        return s;
+    }
+    //public abstract String use();
+    @Override
+    public String use() {
+        return toString("Nice and cold");
+    }
 }
 
 class Cocacola extends Drinks{
@@ -24,8 +31,28 @@ class Cocacola extends Drinks{
         return s;
     }
 
-    @Override
+    /*@Override
     public String use() {
         return null;
+    }*/
+}
+class Water extends Drinks{
+
+    public Water(String name, int amount) {
+        super(name, amount);
     }
+
+    @Override
+    public String examine(){
+        return toString("Price 5 kr, volume 5 dl, 0 kcal.");
+    }
+
+    private String toString(String s) {
+        return s;
+    }
+
+    /*@Override
+    public String use() {
+        return null;
+    }*/
 }

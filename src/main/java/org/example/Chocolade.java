@@ -6,7 +6,14 @@ abstract class Chocolade extends Product {
     }
 
     public abstract String examine();
-    public abstract String use();
+    private String toString(String s) {
+        return s;
+    }
+    //public abstract String use();
+    @Override
+    public String use() {
+        return toString("Chocolade empty, congratulations for consuming a massive amounts of calories");
+    }
 }
 class Snickers extends Chocolade{
 
@@ -23,10 +30,10 @@ class Snickers extends Chocolade{
         return s;
     }
 
-    @Override
-    public String use() {
-        return toString("Nice with some chocolade but it was just to little");
-    }
+    //@Override
+    //public String use() {
+    //    return toString("Nice with some chocolade but it was just to little");
+   // }
 }
 class Paradis extends Chocolade{
 
@@ -43,8 +50,8 @@ class Paradis extends Chocolade{
         return s;
     }
 
-    @Override
+    /*@Override
     public String use() {
         return toString("Wow, you ate all chocolade in one go, impressive!");
-    }
+    }*/
 }

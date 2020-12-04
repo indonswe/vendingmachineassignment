@@ -4,23 +4,19 @@ public class cashInterface {
     //int money;
     int[] money = new int[9];
 
-    /*public enum money{
-        kr1(0),
-        kr2(0),
-        kr5(0),
-        kr10(0),
-        kr20(0),
-        kr50(0),
-        kr100(0),
-        kr200(0),
-        kr500(0),
-        kr1000(0);
-
-        private final int amount;
-
-        money(int amount) {
-            this.amount = amount;
-        }*/
+    public enum cBU{
+        kr1,
+        kr2,
+        kr5,
+        kr10,
+        kr20,
+        kr50,
+        kr100,
+        kr200,
+        kr500,
+        kr1000;
+    }
+    cBU[] cBUArray = cBU.values();
     public void cashInterface() {
         for(int i=0;i<money.length;i++){
             money[i]=10;
@@ -62,7 +58,7 @@ public class cashInterface {
                 System.out.println("Input error");
                 System.out.println("The machine accepts the following denominations:");
                 System.out.println("1kr, 2kr, 5kr, 10kr, 20kr, 50kr, 100kr, 200kr, 500kr, 1000kr.");
-                System.out.println("Put in the money one at a time followed by enter.");
+                System.out.println("Put in the money one at a time!");
                 return 0;
         }
         return deposit;
@@ -117,6 +113,12 @@ public class cashInterface {
     public void resetCashInterface(){
         for(int i=0;i<money.length;i++){
             money[i]=0;
+        }
+    }
+    public void cashByUser(){
+        int i=0;
+        for(cBU slots:cBU.values()) {
+            System.out.println(slots + ": "+ money[i]);
         }
     }
 
