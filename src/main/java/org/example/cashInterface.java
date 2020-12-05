@@ -121,7 +121,7 @@ public class cashInterface {
         int i=-1;
         for(cBU slots:cBU.values()) {
             ++i;
-            System.out.println(slots + ": "+ money[i] + i);
+            System.out.println(slots + ": "+ money[i]);
         }
     }
 

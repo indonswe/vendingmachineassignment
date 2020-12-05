@@ -21,8 +21,7 @@ public class App
 
 
         Vendingmachine m = new Vendingmachine();
-        //Snickers snickers = new Snickers("Snickers",5);
-        //Paradis paradis = new Paradis("Paradis", 39);
+
 
 
 
@@ -30,7 +29,6 @@ public class App
             mainMenu pMM = new mainMenu();// handle main menu
             amount = m.getBalance();
             answer = pMM.pMM(amount);
-            //System.out.println(answer);
             if (answer == 5) {
                 amount = m.getBalance();
                 m.money.giveMoneyBack(amount);
@@ -49,7 +47,6 @@ public class App
                 answerInt = Integer.parseInt(question);
                 Product answerProduct = m.request(answerInt);
                 answerString = answerProduct.examine();
-                //System.out.println(answerProduct.toString());
                 System.out.println(answerString);
                 System.out.println("Do you want to buy the product(y/n)? ");
                 scNr1 = new Scanner(System.in);
@@ -79,7 +76,6 @@ public class App
 
             } else if (answer == 1) {
                 String[] getProducts = m.getProducts();
-                System.out.println(getProducts.length);
                 for (int i = 0; i < getProducts.length; i++) {
 
                     System.out.println(getProducts[i]);
@@ -94,7 +90,6 @@ public class App
                 answerInt = Integer.parseInt(question);
                 Product answerProduct = m.request(answerInt);
                 answerString = answerProduct.examine();
-                //System.out.println(answerProduct.toString());
                 System.out.println(answerString);
             }
         }while(quit==false);
