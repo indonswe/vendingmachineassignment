@@ -30,7 +30,9 @@ public class vendingMachineInterfaceTest {
 
         Product actual = m.request(2);
 
-        assertEquals(expected,actual);
+        assertEquals(expected.amount,actual.amount);
+        assertEquals(expected.name,actual.name);
+        //assertEquals(expected.productId,actual.productId);
     }
 
     @Test
@@ -45,13 +47,34 @@ public class vendingMachineInterfaceTest {
 
     @Test
     public void getDescription() {
+        Paradis expected = new Paradis("Paradis", 39);
+
+        Product actual = m.request(2);
+
+        assertEquals(expected.examine,actual.examine);
+
     }
 
     @Test
     public void getBalance() {
+        int expected = 500;
+        int actual = 0;
+
+        m.addCurrency(500);
+        actual=m.getBalance();
+
+        assertEquals(expected, actual);
+
     }
 
     @Test
     public void getProducts() {
+        int expected = 6;
+        int actual;
+
+        String[] getProducts = m.getProducts();
+        actual = getProducts.length;
+
+        assertEquals(expected,actual);
     }
 }

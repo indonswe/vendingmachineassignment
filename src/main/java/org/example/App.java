@@ -77,7 +77,6 @@ public class App
             } else if (answer == 1) {
                 String[] getProducts = m.getProducts();
                 for (int i = 0; i < getProducts.length; i++) {
-
                     System.out.println(getProducts[i]);
                 }
 
