@@ -9,10 +9,10 @@ abstract class Covid19 extends Product {
     private String toString(String s) {
         return s;
     }
-    //public abstract String use();
+
     @Override
     public String use() {
-        return toString("Upping the odds of survival");
+        return toString("You consumed a virus killer");
     }
 }
 
@@ -24,17 +24,14 @@ class Zinc extends Covid19{
 
     @Override
     public String examine(){
-        return toString("Pris 50 kr, need to get inte the virus cells");
+        return toString("Zinc: price 50 kr, kill virus if you can get it into the cells");
     }
 
     private String toString(String s) {
         return s;
     }
 
-    @Override
-    public String use() {
-        return null;
-    }
+
 }
 class Quercetin extends Covid19{
 
@@ -44,15 +41,12 @@ class Quercetin extends Covid19{
 
     @Override
     public String examine(){
-        return toString("Pris 300 kr, help Zinc getting into virus cells");
+        return toString("Quercetin: price 300 kr, helps Zinc getting into virus cells");
     }
 
     private String toString(String s) {
         return s;
     }
 
-    @Override
-    public String use() {
-        return null;
-    }
+
 }

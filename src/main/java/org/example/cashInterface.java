@@ -2,7 +2,7 @@ package org.example;
 
 public class cashInterface {
     //int money;
-    int[] money = new int[9];
+    int[] money = new int[10];
 
     public enum cBU{
         kr1,
@@ -19,10 +19,11 @@ public class cashInterface {
     cBU[] cBUArray = cBU.values();
     public void cashInterface() {
         for(int i=0;i<money.length;i++){
-            money[i]=10;
+            money[i]=0;
         }
     }
     public int depositMoneySlot(int deposit) {
+        System.out.println(deposit);
         switch (deposit) {
             case 1:
                 money[0] = money[0] + 1;
@@ -61,16 +62,17 @@ public class cashInterface {
                 System.out.println("Put in the money one at a time!");
                 return 0;
         }
+        System.out.println(money[7]);
         return deposit;
     }
     public void giveMoneyBack(int amount) {
         do {
             System.out.println("You will get " + amount + " back. ");
-            if (amount > 1000) {
+            if (amount > 999) {
                 money[0] = money[0] + 1;
                 amount = amount - 1000;
                 System.out.println("Machine output 1000kr");
-            } else if (amount > 500) {
+            } else if (amount > 499) {
                 money[8] = money[8] - 1;
                 amount = amount - 500;
                 System.out.println("Machine output 500kr");
@@ -116,17 +118,14 @@ public class cashInterface {
         }
     }
     public void cashByUser(){
-        int i=0;
+        int i=-1;
         for(cBU slots:cBU.values()) {
-            System.out.println(slots + ": "+ money[i]);
+            ++i;
+            System.out.println(slots + ": "+ money[i] + i);
         }
     }
 
 }
 
-    //public enum money(1)
-    //int[]money = new int[]{1,2,5,10,20,50,100,200,500,1000};
-    //public int cashInterface(int nr){
-    //    return money(nr);
-    //}
+
 

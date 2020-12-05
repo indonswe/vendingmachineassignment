@@ -9,7 +9,7 @@ abstract class Chocolade extends Product {
     private String toString(String s) {
         return s;
     }
-    //public abstract String use();
+
     @Override
     public String use() {
         return toString("Chocolade empty, congratulations for consuming a massive amounts of calories");
@@ -30,10 +30,7 @@ class Snickers extends Chocolade{
         return s;
     }
 
-    //@Override
-    //public String use() {
-    //    return toString("Nice with some chocolade but it was just to little");
-   // }
+
 }
 class Paradis extends Chocolade{
 
@@ -49,9 +46,4 @@ class Paradis extends Chocolade{
     private String toString(String s) {
         return s;
     }
-
-    /*@Override
-    public String use() {
-        return toString("Wow, you ate all chocolade in one go, impressive!");
-    }*/
 }

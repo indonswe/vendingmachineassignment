@@ -14,14 +14,14 @@ interface vendingMachineInterface{
 public class Vendingmachine implements vendingMachineInterface{
 
 
-    private static Product[] productArray   = new Product[3];
+    private static Product[] productArray   = new Product[7];
     cashInterface money = new cashInterface();
     public Vendingmachine(){
 
         Machine newMachine = new Machine("Machine", 0);
         Snickers newSnickers = new Snickers("Snickers", 8);
         Paradis paradis = new Paradis("Paradis", 39);
-        Cocacola cocacola = new Cocacola("Cocalcola", 13);
+        Cocacola cocacola = new Cocacola("Cocacola", 13);
         Water water = new Water("Water", 5);
         Zinc zinc = new Zinc("Zinc", 50);
         Quercetin quercetin = new Quercetin("Quercetin", 300);

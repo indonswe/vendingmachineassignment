@@ -9,10 +9,10 @@ abstract class Drinks extends Product {
     private String toString(String s) {
         return s;
     }
-    //public abstract String use();
+
     @Override
     public String use() {
-        return toString("Nice and cold");
+        return toString("You consumed a nice and cold drink");
     }
 }
 
@@ -24,17 +24,14 @@ class Cocacola extends Drinks{
 
     @Override
     public String examine(){
-        return toString("Pris 5 kr, vikt 100 gram, kalorier 50 kcal.");
+        return toString("Cocacola: price 13kr, volume 33 cl, 30 kcal.");
     }
 
     private String toString(String s) {
         return s;
     }
 
-    /*@Override
-    public String use() {
-        return null;
-    }*/
+
 }
 class Water extends Drinks{
 
@@ -44,15 +41,12 @@ class Water extends Drinks{
 
     @Override
     public String examine(){
-        return toString("Price 5 kr, volume 5 dl, 0 kcal.");
+        return toString("Water: price 5 kr, volume 5 dl, 0 kcal.");
     }
 
     private String toString(String s) {
         return s;
     }
 
-    /*@Override
-    public String use() {
-        return null;
-    }*/
+
 }
