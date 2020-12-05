@@ -24,15 +24,17 @@ public class mainMenu {
 
 
 
-        answer = wFA();
-        //System.out.println(answer);
-        answerInt = Integer.parseInt(answer);
+            answer = wFA(amount);
+            //System.out.println(answer);
+            answerInt = Integer.parseInt(answer);
 
         return answerInt;
     }
-    public String wFA(){
+    public String wFA(int amount){
+        if (amount!=99999) {
         Scanner scNr1 = new Scanner(System.in);
         answer = scNr1.nextLine(); // holds actual input
+        } else answer = "7";
         return answer;
     }
 }
