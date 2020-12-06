@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class AppTest 
 {
-    Vendingmachine m = new Vendingmachine();
+    /*Vendingmachine m = new Vendingmachine();
 
     @Before
     public void setUp() throws Exception {
@@ -54,5 +54,5 @@ public class AppTest
         actual=6;
 
         assertEquals(expected,actual);
-    }
+    }*/
 }
