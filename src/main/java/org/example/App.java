@@ -26,23 +26,21 @@ public class App
             if (testAnswer>0) answer = testAnswer;
             if (answer == 1) {
                 String[] getProducts = m.getProducts();
-                for (int i = 0; i < getProducts.length; i++) {
-                    System.out.println(getProducts[i]);
-                }
+                one(getProducts);
             } else if (answer == 2) {
                 System.out.println("Examine product(enter productId): ");
                 sca();
                 Product answerProduct = m.request(answerInt);
-                answerString = answerProduct.examine();
-                System.out.println(answerString);
+                two(answerProduct);
             } else if (answer == 3) {
                 System.out.println("How much money do you want to deposit: ");
                 sca();
                 m.addCurrency(answerInt);
-                System.out.println(answerInt);
+                //System.out.println(answerInt);
             }else if (answer == 4) {
                 System.out.println("Buy product(enter productId): ");
                 sca();
+                //four();
                 Product answerProduct = m.request(answerInt);
                 answerString = answerProduct.examine();
                 System.out.println(answerString);
@@ -70,7 +68,6 @@ public class App
             }else if (answer == 5) {
                 amount = m.getBalance();
                 m.money.giveMoneyBack(amount);
-                //break; // ends the program
                 quit=true;
             } else if (answer == 6) {
                 m.money.cashByUser();
@@ -85,4 +82,14 @@ public class App
         question = scNr1.nextLine(); // holds actual input
         if (!question.equals("y") & !question.equals("n")) answerInt = Integer.parseInt(question);
     }
+    public static void one(String[] one){
+        for (int i = 0; i < one.length; i++) {
+            System.out.println(one[i]);
+        }
+    }
+    public static void two(Product two){
+        String answerTwo = two.examine();
+        System.out.println(answerTwo);
+    }
+
 }
