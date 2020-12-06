@@ -8,7 +8,7 @@ public class App
     public static int answerInt;
     public static void main( String[] args )
     {
-        tryInt = start(0);
+        int tryInt = start(0);
     }
     public static int start(int testAnswer){
         int answer;
