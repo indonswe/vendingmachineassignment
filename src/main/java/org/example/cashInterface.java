@@ -66,7 +66,7 @@ public class cashInterface {
     }
     public void giveMoneyBack(int amount) {
         do {
-            System.out.println("You will get " + amount + " back. ");
+            //System.out.println("You will get " + amount + " back. ");
             if (amount > 999) {
                 money[0] = money[0] + 1;
                 amount = amount - 1000;
@@ -118,6 +118,7 @@ public class cashInterface {
     }
     public void cashByUser(){
         int i=-1;
+        System.out.println("Revenue for each money slot");
         for(cBU slots:cBU.values()) {
             ++i;
             System.out.println(slots + ": "+ money[i]);

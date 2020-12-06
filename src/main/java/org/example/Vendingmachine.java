@@ -62,7 +62,6 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public int getBalance() {
-
         return productArray[0].amount;
     }
 
