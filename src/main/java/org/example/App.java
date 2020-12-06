@@ -2,6 +2,12 @@ package org.example;
 
 import java.util.Scanner;
 
+/*State of my Vendingmachine about 22.30 Sunday
+The good: The app seems to work, think I have followed the instructions somewhat, used abstract, interface, enum
+The inbetween: My best implementation of Junit so far when it comes to cover but bad naming and app not covered
+The bad: The app is messy and basically no comments in any of the code
+mvh Adrian Nilsson*/
+
 public class App 
 {
     public static String question;
