@@ -14,16 +14,15 @@ public class cashInterface {
         kr100,
         kr200,
         kr500,
-        kr1000;
-    }
-    cBU[] cBUArray = cBU.values();
+        kr1000;}
+    //cBU[] cBUArray = cBU.values();
     public void cashInterface() {
         for(int i=0;i<money.length;i++){
             money[i]=0;
         }
     }
     public int depositMoneySlot(int deposit) {
-        System.out.println(deposit);
+        //System.out.println(deposit);
         switch (deposit) {
             case 1:
                 money[0] = money[0] + 1;
@@ -56,7 +55,7 @@ public class cashInterface {
                 money[9] = money[9] + 1;
                 break;
             default:
-                System.out.println("Input error");
+                System.out.println("Fake money alert");
                 System.out.println("The machine accepts the following denominations:");
                 System.out.println("1kr, 2kr, 5kr, 10kr, 20kr, 50kr, 100kr, 200kr, 500kr, 1000kr.");
                 System.out.println("Put in the money one at a time!");

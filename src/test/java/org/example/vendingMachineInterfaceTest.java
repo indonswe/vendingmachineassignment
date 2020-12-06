@@ -9,6 +9,8 @@ public class vendingMachineInterfaceTest {
     Vendingmachine m = new Vendingmachine();
     @Before
     public void setUp() throws Exception {
+        Productsequencer.reset();
+        //Vendingmachine m = new Vendingmachine();
 
     }
 
@@ -26,13 +28,15 @@ public class vendingMachineInterfaceTest {
 
     @Test
     public void request() {
-        Paradis expected = new Paradis("Paradis", 39);
+        String expectedS = "Paradis";
+        int expectedIA = 39;
+        int expectedId = 2;
 
         Product actual = m.request(2);
 
-        assertEquals(expected.amount,actual.amount);
-        assertEquals(expected.name,actual.name);
-        //assertEquals(expected.productId,actual.productId);
+        assertEquals(expectedIA,actual.amount);
+        assertEquals(expectedS,actual.name);
+        assertEquals(expectedId,actual.productId);
     }
 
     @Test

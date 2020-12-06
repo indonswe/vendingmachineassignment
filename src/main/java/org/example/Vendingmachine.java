@@ -13,11 +13,10 @@ interface vendingMachineInterface{
 
 public class Vendingmachine implements vendingMachineInterface{
 
-
     private static Product[] productArray   = new Product[7];
     cashInterface money = new cashInterface();
-    public Vendingmachine(){
 
+    public Vendingmachine(){
         Machine newMachine = new Machine("Machine", 0);
         Snickers newSnickers = new Snickers("Snickers", 8);
         Paradis paradis = new Paradis("Paradis", 39);
@@ -32,10 +31,6 @@ public class Vendingmachine implements vendingMachineInterface{
         Vendingmachine.productArray[4]= water;
         Vendingmachine.productArray[5]= zinc;
         Vendingmachine.productArray[6]= quercetin;
-
-
-
-
     }
 
     @Override

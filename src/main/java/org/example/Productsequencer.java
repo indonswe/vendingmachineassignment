@@ -9,4 +9,8 @@ public class Productsequencer {
         //TodoSequencer.todoId = ++todoId;
         return productId;
     }
+    public static void reset() {
+        Productsequencer.productId = -1;
+    }
+
 }
