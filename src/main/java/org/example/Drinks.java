@@ -6,7 +6,7 @@ abstract class Drinks extends Product {
     }
 
     public abstract String examine();
-    private String toString(String s) {
+    String toString(String s) {
         return s;
     }
 
@@ -16,7 +16,7 @@ abstract class Drinks extends Product {
     }
 }
 
-class Cocacola extends Drinks{
+/*class Cocacola extends Drinks{
 
     public Cocacola(String name, int amount) {
         super(name, amount);
@@ -49,4 +49,4 @@ class Water extends Drinks{
     }
 
 
-}
+}*/

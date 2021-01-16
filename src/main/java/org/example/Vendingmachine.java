@@ -20,8 +20,20 @@ public class Vendingmachine implements vendingMachineInterface{
         Machine newMachine = new Machine("Machine", 0);
         Snickers newSnickers = new Snickers("Snickers", 8);
         Paradis paradis = new Paradis("Paradis", 39);
-        Cocacola cocacola = new Cocacola("Cocacola", 13);
-        Water water = new Water("Water", 5);
+        Drinks cocacola = new Drinks("Cocacola", 13) {
+            @Override
+            public String examine() {
+                return toString("Cocacola: price 13kr, volume 33 cl, 30 kcal.");
+                }
+        };
+        //Cocacola cocacola = new Cocacola("Cocacola", 13);
+        Drinks water = new Drinks("Water", 5) {
+            @Override
+            public String examine() {
+                return toString("Water: price 5 kr, volume 5 dl, 0 kcal.");
+            }
+        };
+        //Water water = new Water("Water", 5);
         Zinc zinc = new Zinc("Zinc", 50);
         Quercetin quercetin = new Quercetin("Quercetin", 300);
         Vendingmachine.productArray[0]= newMachine;
@@ -56,8 +68,10 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public String getDescription(int productNumber) {
-        String getDes = productArray[productNumber].examine;
-        return getDes;
+        //String getDes = productArray[productNumber].examine;
+
+        //return getDes;
+        return null;
     }
 
     @Override
