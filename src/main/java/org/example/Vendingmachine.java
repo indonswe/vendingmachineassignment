@@ -28,8 +28,8 @@ public class Vendingmachine implements vendingMachineInterface{
                 return null;
             }
         };
-        Snickers newSnickers = new Snickers("Snickers", 8);
-        Paradis paradis = new Paradis("Paradis", 39);
+        //Snickers newSnickers = new Snickers("Snickers", 8);
+        //Paradis paradis = new Paradis("Paradis", 39);
         Drinks cocacola = new Drinks("Cocacola", 13) {
             @Override
             public String examine() {
@@ -44,11 +44,23 @@ public class Vendingmachine implements vendingMachineInterface{
             }
         };
         //Water water = new Water("Water", 5);
-        Zinc zinc = new Zinc("Zinc", 50);
-        Quercetin quercetin = new Quercetin("Quercetin", 300);
+        Covid19 zinc = new Covid19("Zinc", 50) {
+            @Override
+            public String examine() {
+                return toString("Zinc: price 50 kr, kill virus if you can get it into the cells");
+            }
+        };
+        //Zinc zinc = new Zinc("Zinc", 50);
+        Covid19 quercetin = new Covid19("Quercetin", 300) {
+            @Override
+            public String examine() {
+                return toString("Quercetin: price 300 kr, helps Zinc getting into virus cells");
+            }
+        };
+        //Quercetin quercetin = new Quercetin("Quercetin", 300);
         Vendingmachine.productArray[0]= moneyPool;
-        Vendingmachine.productArray[1]= newSnickers;
-        Vendingmachine.productArray[2]= paradis;
+        //Vendingmachine.productArray[1]= newSnickers;
+        //Vendingmachine.productArray[2]= paradis;
         Vendingmachine.productArray[3]= cocacola;
         Vendingmachine.productArray[4]= water;
         Vendingmachine.productArray[5]= zinc;
@@ -78,9 +90,7 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public String getDescription(int productNumber) {
-        //String getDes = productArray[productNumber].examine;
 
-        //return getDes;
         return null;
     }
 

@@ -15,7 +15,7 @@ abstract class Chocolade extends Product {
         return toString("Chocolade empty, congratulations for consuming a massive amounts of calories");
     }
 }
-class Snickers extends Chocolade{
+/*class Snickers extends Chocolade{
 
     public Snickers(String name, int amount) {
         super(name, amount);
@@ -46,4 +46,4 @@ class Paradis extends Chocolade{
     private String toString(String s) {
         return s;
     }
-}
+}*/

@@ -6,7 +6,7 @@ abstract class Covid19 extends Product {
     }
 
     public abstract String examine();
-    private String toString(String s) {
+    String toString(String s) {
         return s;
     }
 
@@ -16,7 +16,7 @@ abstract class Covid19 extends Product {
     }
 }
 
-class Zinc extends Covid19{
+/*class Zinc extends Covid19{
 
     public Zinc(String name, int amount) {
         super(name, amount);
@@ -49,4 +49,4 @@ class Quercetin extends Covid19{
     }
 
 
-}
+}*/
