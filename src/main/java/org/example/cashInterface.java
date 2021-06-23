@@ -4,7 +4,7 @@ public class cashInterface {
     //int money;
     int[] money = new int[10];
 
-    public enum cBU{
+    /*public enum cBU{
         kr1,
         kr2,
         kr5,
@@ -14,7 +14,7 @@ public class cashInterface {
         kr100,
         kr200,
         kr500,
-        kr1000;}
+        kr1000;}*/
     //cBU[] cBUArray = cBU.values();
     public void cashInterface() {
         for(int i=0;i<money.length;i++){
@@ -119,7 +119,7 @@ public class cashInterface {
     public void cashByUser(){
         int i=-1;
         System.out.println("Revenue for each money slot");
-        for(cBU slots:cBU.values()) {
+        for(cashRepresentation slots:cashRepresentation.values()) {
             ++i;
             System.out.println(slots + ": "+ money[i]);
         }

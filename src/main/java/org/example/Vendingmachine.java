@@ -17,7 +17,17 @@ public class Vendingmachine implements vendingMachineInterface{
     cashInterface money = new cashInterface();
 
     public Vendingmachine(){
-        Machine newMachine = new Machine("Machine", 0);
+        Product moneyPool = new Product("mainPool", 0) {
+            @Override
+            public String examine() {
+                return null;
+            }
+
+            @Override
+            public String use() {
+                return null;
+            }
+        };
         Snickers newSnickers = new Snickers("Snickers", 8);
         Paradis paradis = new Paradis("Paradis", 39);
         Drinks cocacola = new Drinks("Cocacola", 13) {
@@ -36,7 +46,7 @@ public class Vendingmachine implements vendingMachineInterface{
         //Water water = new Water("Water", 5);
         Zinc zinc = new Zinc("Zinc", 50);
         Quercetin quercetin = new Quercetin("Quercetin", 300);
-        Vendingmachine.productArray[0]= newMachine;
+        Vendingmachine.productArray[0]= moneyPool;
         Vendingmachine.productArray[1]= newSnickers;
         Vendingmachine.productArray[2]= paradis;
         Vendingmachine.productArray[3]= cocacola;
