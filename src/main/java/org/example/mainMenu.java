@@ -3,11 +3,11 @@ package org.example;
 import java.util.Scanner;
 
 public class mainMenu {
-    boolean quit=false;
+    //boolean quit=false;
     String answer;
     int answerInt;
-    int amount;
-    int value;
+    //int amount;
+    //int value;
     public mainMenu (){
     }
     public int pMM(int amount){
@@ -25,7 +25,7 @@ public class mainMenu {
 
 
             answer = wFA(amount);
-            //System.out.println(answer);
+
             answerInt = Integer.parseInt(answer);
 
         return answerInt;

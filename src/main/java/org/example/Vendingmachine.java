@@ -7,20 +7,19 @@ public class Vendingmachine implements vendingMachineInterface{
     private static Product[] productArray   = new Product[7];
     cashInterface money = new cashInterface();
 
+    //Creating the moneypool and filling the machine with products
+
     public Vendingmachine(){
         Product moneyPool = new Product("mainPool", 0) {
             @Override
             public String examine() {
                 return null;
             }
-
             @Override
             public String use() {
                 return null;
             }
         };
-        //Snickers newSnickers = new Snickers("Snickers", 8);
-        //Paradis paradis = new Paradis("Paradis", 39);
 
         Chocolade snickers = new Chocolade("Snickers", 8) {
             @Override
@@ -42,28 +41,28 @@ public class Vendingmachine implements vendingMachineInterface{
                 return toString("Cocacola: price 13kr, volume 33 cl, 30 kcal.");
                 }
         };
-        //Cocacola cocacola = new Cocacola("Cocacola", 13);
+
         Drinks water = new Drinks("Water", 5) {
             @Override
             public String examine() {
                 return toString("Water: price 5 kr, volume 5 dl, 0 kcal.");
             }
         };
-        //Water water = new Water("Water", 5);
+
         Covid19 zinc = new Covid19("Zinc", 50) {
             @Override
             public String examine() {
                 return toString("Zinc: price 50 kr, kill virus if you can get it into the cells");
             }
         };
-        //Zinc zinc = new Zinc("Zinc", 50);
+
         Covid19 quercetin = new Covid19("Quercetin", 300) {
             @Override
             public String examine() {
                 return toString("Quercetin: price 300 kr, helps Zinc getting into virus cells");
             }
         };
-        //Quercetin quercetin = new Quercetin("Quercetin", 300);
+
         Vendingmachine.productArray[0]= moneyPool;
         Vendingmachine.productArray[1]= snickers;
         Vendingmachine.productArray[2]= paradis;
@@ -72,6 +71,8 @@ public class Vendingmachine implements vendingMachineInterface{
         Vendingmachine.productArray[5]= zinc;
         Vendingmachine.productArray[6]= quercetin;
     }
+
+    //Methods to access the vendingmachine
 
     @Override
     public void addCurrency(int amount) {
