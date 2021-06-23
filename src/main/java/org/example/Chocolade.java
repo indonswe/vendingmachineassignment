@@ -6,7 +6,7 @@ abstract class Chocolade extends Product {
     }
 
     public abstract String examine();
-    private String toString(String s) {
+    String toString(String s) {
         return s;
     }
 

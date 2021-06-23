@@ -51,9 +51,9 @@ public class vendingMachineInterfaceTest {
 
     @Test
     public void getDescription() {
-        Paradis expected = new Paradis("Paradis", 39);
+        /*Paradis expected = new Paradis("Paradis", 39);
 
-        Product actual = m.request(2);
+        Product actual = m.request(2);*/
 
         //assertEquals(expected.examine,actual.examine);
 

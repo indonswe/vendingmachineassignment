@@ -2,15 +2,6 @@ package org.example;
 
 import java.util.Arrays;
 
-interface vendingMachineInterface{
-    void addCurrency(int amount);
-    Product request(int productNumber);
-    int endSession();
-    String getDescription(int productNumber);
-    int getBalance();
-    String[] getProducts();
-}
-
 public class Vendingmachine implements vendingMachineInterface{
 
     private static Product[] productArray   = new Product[7];
@@ -30,6 +21,21 @@ public class Vendingmachine implements vendingMachineInterface{
         };
         //Snickers newSnickers = new Snickers("Snickers", 8);
         //Paradis paradis = new Paradis("Paradis", 39);
+
+        Chocolade snickers = new Chocolade("Snickers", 8) {
+            @Override
+            public String examine() {
+                return toString("Snickers, vikt: 100 gram, pris: 8 kr, kcal: 500.");
+            }
+        };
+
+        Chocolade paradis = new Chocolade("Paradis", 39) {
+            @Override
+            public String examine() {
+                return toString("Paradis, vikt: 500 gram, pris: 39 kr, kcal: 2500.");
+            }
+        };
+
         Drinks cocacola = new Drinks("Cocacola", 13) {
             @Override
             public String examine() {
@@ -59,8 +65,8 @@ public class Vendingmachine implements vendingMachineInterface{
         };
         //Quercetin quercetin = new Quercetin("Quercetin", 300);
         Vendingmachine.productArray[0]= moneyPool;
-        //Vendingmachine.productArray[1]= newSnickers;
-        //Vendingmachine.productArray[2]= paradis;
+        Vendingmachine.productArray[1]= snickers;
+        Vendingmachine.productArray[2]= paradis;
         Vendingmachine.productArray[3]= cocacola;
         Vendingmachine.productArray[4]= water;
         Vendingmachine.productArray[5]= zinc;
