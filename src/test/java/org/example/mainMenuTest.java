@@ -9,7 +9,7 @@ public class mainMenuTest {
 
     Vendingmachine m = new Vendingmachine();
 
-    mainMenu pMM = new mainMenu();// handle main menu
+    Mainmenu pMM = new Mainmenu();// handle main menu
 
     @Before
     public void setUp() throws Exception {
@@ -22,7 +22,7 @@ public class mainMenuTest {
         int amount = 99999;
         int actual=0;
 
-        actual = pMM.pMM(amount);
+        actual = pMM.menuPrintOut(amount);
 
         assertEquals(expected,actual);
 

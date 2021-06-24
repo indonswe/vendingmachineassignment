@@ -2,62 +2,60 @@ package org.example;
 
 import java.util.Scanner;
 
-/*State of my Vendingmachine about 22.30 Sunday
-The good: The app seems to work, think I have followed the instructions somewhat, used abstract, interface, enum
-The inbetween: My best implementation of Junit so far when it comes to cover but bad naming and app not covered
-The bad: The app is messy and basically no comments in any of the code
-mvh Adrian Nilsson*/
+import static org.example.App.start;
 
-public class App 
+public class App
 {
     public static String question;
     public static int answerInt;
     public static void main( String[] args )
     {
-        int tryInt = start(0);
+        int tryInt = start();
+
+        //start();
+
     }
-    public static int start(int testAnswer){
-        int answer;
+    public static int start(){
+
+        int answer; //
         boolean quit = false;
-        //String name= "Machine";
-        int amount = 0;
-        //String question;
-        //int answerInt;
+        int amount;
+
         String answerString;
-        Vendingmachine m = new Vendingmachine();
+        Vendingmachine vendingMachine = new Vendingmachine();
         do {
-            mainMenu pMM = new mainMenu();// handle main menu
-            amount = m.getBalance();
-            answer = pMM.pMM(amount);
-            if (testAnswer>0) answer = testAnswer;
+            Mainmenu mainmenu = new Mainmenu();// handle main menu
+            amount = vendingMachine.getBalance();
+            answer = mainmenu.menuPrintOut(amount);
+            //if (testAnswer>0) answer = testAnswer;
             if (answer == 1) {
-                String[] getProducts = m.getProducts();
+                String[] getProducts = vendingMachine.getProducts();
                 one(getProducts);
             } else if (answer == 2) {
                 System.out.println("Examine product(enter productId): ");
                 sca();
-                Product answerProduct = m.request(answerInt);
+                Product answerProduct = vendingMachine.request(answerInt);
                 two(answerProduct);
             } else if (answer == 3) {
                 System.out.println("How much money do you want to deposit: ");
                 sca();
-                m.addCurrency(answerInt);
-                //System.out.println(answerInt);
+                vendingMachine.addCurrency(answerInt);
+
             }else if (answer == 4) {
                 System.out.println("Buy product(enter productId): ");
                 sca();
-                //four();
-                Product answerProduct = m.request(answerInt);
+
+                Product answerProduct = vendingMachine.request(answerInt);
                 answerString = answerProduct.examine();
                 System.out.println(answerString);
                 System.out.println("Do you want to buy the product(y/n)? ");
                 sca();
                 char questionCharacter = question.charAt(0);
                 if (questionCharacter == 'y') {
-                    amount = m.getBalance();
+                    amount = vendingMachine.getBalance();
                     int price = answerProduct.amount;
                     if (price < amount) {
-                        m.addCurrency(-price);
+                        vendingMachine.addCurrency(-price);
                         System.out.println("Congratulations, you bought the product");
                         System.out.println("Do you want to consume the product? ");
                         sca();
@@ -72,14 +70,14 @@ public class App
 
                 } else { }
             }else if (answer == 5) {
-                amount = m.getBalance();
-                m.money.giveMoneyBack(amount);
+                amount = vendingMachine.getBalance();
+                vendingMachine.money.giveMoneyBack(amount);
                 quit=true;
             } else if (answer == 6) {
-                m.money.cashByUser();
+                vendingMachine.money.cashByUser();
             }
         }while(quit==false);
-        return answer;
+        return 0; //Program finish at this place
     }
 
 
