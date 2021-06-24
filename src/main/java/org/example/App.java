@@ -68,6 +68,7 @@ public class App
                     if (price < amount) {
                         vendingMachine.addCurrency(-price);
                         System.out.println("Congratulations, you bought the product");
+                        Moneypool.totalInvested=Moneypool.totalInvested+price;
                         System.out.println("Do you want to consume the product? ");
                         sca();
                         questionCharacter = question.charAt(0);

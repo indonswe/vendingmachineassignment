@@ -88,7 +88,6 @@ public class Vendingmachine implements vendingMachineInterface{
     public void addCurrency(int amount) {
         if (amount>-1){
            amount = money.depositMoneySlot(amount);
-           Moneypool.totalInvested = Moneypool.totalInvested + amount;
         }else{ }
         productArray[0].amount = productArray[0].amount+ amount;
     }
