@@ -17,7 +17,8 @@ public class App
         int amount = start();
         System.out.println("Revenue machine today: "+ amount);
         createFile();
-        saveFile(amount);
+        String amountString = String.valueOf(amount);
+        saveFile(amountString);
         System.out.println("Total revenue machine: ");
         readFile();
     }
@@ -116,7 +117,7 @@ public class App
         }
     }
 
-    public static void saveFile(int amount){
+    public static void saveFile(String amount){
         try {
             FileWriter myWriter = new FileWriter("amount.txt");
             //myWriter.write("Files in Java might be tricky, but it is fun enough!");
