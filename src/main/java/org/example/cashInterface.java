@@ -1,7 +1,7 @@
 package org.example;
 
 public class cashInterface {
-    //int money;
+    int spaceForMoney;
     int[] money = new int[10];
 
     /*public enum cBU{
@@ -16,9 +16,20 @@ public class cashInterface {
         kr500,
         kr1000;}*/
     //cBU[] cBUArray = cBU.values();
+
+
+    public cashInterface(int spaceForMoney) {
+        this.spaceForMoney = spaceForMoney;
+        for(int i=0;i<money.length;i++){
+            money[i]=spaceForMoney;
+            System.out.println(money[i]);
+        }
+    }
+
     public void cashInterface() {
         for(int i=0;i<money.length;i++){
-            money[i]=0;
+            money[i]=spaceForMoney;
+            System.out.println(money[i]);
         }
     }
     public int depositMoneySlot(int deposit) {

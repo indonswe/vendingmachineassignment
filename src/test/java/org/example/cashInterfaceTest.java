@@ -12,7 +12,7 @@ public class cashInterfaceTest {
 
     @Before
     public void setUp() throws Exception {
-        moneyInterface = new cashInterface();
+     //   moneyInterface = new cashInterface();
     }
 
     @Test
