@@ -10,21 +10,22 @@ public class Vendingmachine implements vendingMachineInterface{
 
     //Creating the customer money pool
 
+    Product moneyPool = new Product("customerPool", 0) {
+        @Override
+        public String examine() {
+            return null;
+        }
+        @Override
+        public String use() {
+            return null;
+        }
+    };
+
     public Vendingmachine(){
 
-        //cashInterface money = new cashInterface(10);
-        //System.out.println(money);
 
-        Product moneyPool = new Product("customerPool", 0) {
-            @Override
-            public String examine() {
-                return null;
-            }
-            @Override
-            public String use() {
-                return null;
-            }
-        };
+
+
 
         //Creating the products
 
@@ -87,6 +88,7 @@ public class Vendingmachine implements vendingMachineInterface{
     public void addCurrency(int amount) {
         if (amount>-1){
            amount = money.depositMoneySlot(amount);
+           Moneypool.totalInvested = Moneypool.totalInvested + amount;
         }else{ }
         productArray[0].amount = productArray[0].amount+ amount;
     }

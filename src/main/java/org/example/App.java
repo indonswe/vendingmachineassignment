@@ -15,12 +15,16 @@ public class App
     public static void main( String[] args )
     {
         int amount = start();
+        String readFileAmount;
         System.out.println("Revenue machine today: "+ amount);
-        createFile();
         String amountString = String.valueOf(amount);
+        createFile();
+        readFileAmount = readFile();
+        System.out.println("Revenue machine earlier: "+ readFileAmount);
+        int totalRevenue = amount + Integer.parseInt(readFileAmount);
+        amountString = String.valueOf(totalRevenue);
         saveFile(amountString);
-        System.out.println("Total revenue machine: ");
-        readFile();
+        System.out.println("Total revenue machine: "+ totalRevenue);
     }
     public static int start(){
 
@@ -84,7 +88,7 @@ public class App
                 vendingMachine.money.cashByUser();
             }
         }while(quit==false);
-        return amount; //Program finish at this place
+        return Moneypool.totalInvested; //Program finish at this place
     }
 
 
@@ -130,21 +134,22 @@ public class App
         }
     }
 
-    public static void readFile(){
-        //String amounts;
+    public static String readFile(){
+        String amount ="";
         try {
             File myObj = new File("amount.txt");
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 System.out.println(data);
+                amount = data;
             }
             myReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        //return data;
+        return amount;
     }
 
 }
