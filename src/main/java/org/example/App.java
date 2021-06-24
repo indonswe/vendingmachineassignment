@@ -15,52 +15,11 @@ public class App
     public static void main( String[] args )
     {
         int amount = start();
-        Scanner scNr1 = new Scanner(System.in);
-        String question = scNr1.nextLine();
-        answerInt = Integer.parseInt(question);
-
-
-        try {
-            File myObj = new File("amount.txt");
-            if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
-            } else {
-                System.out.println("File already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        }
-
-
-
-            try {
-                FileWriter myWriter = new FileWriter("amount.txt");
-                myWriter.write("Files in Java might be tricky, but it is fun enough!");
-                myWriter.close();
-                System.out.println("Successfully wrote to the file.");
-            } catch (IOException e) {
-                System.out.println("An error occurred.");
-                e.printStackTrace();
-            }
-
-if (answerInt==1) {
-    try {
-        File myObj = new File("amount.txt");
-        Scanner myReader = new Scanner(myObj);
-        while (myReader.hasNextLine()) {
-            String data = myReader.nextLine();
-            System.out.println(data);
-        }
-        myReader.close();
-    } catch (FileNotFoundException e) {
-        System.out.println("An error occurred.");
-        e.printStackTrace();
-    }
-
-}
-        //start();
-
+        System.out.println("Revenue machine today: "+ amount);
+        createFile();
+        saveFile(amount);
+        System.out.println("Total revenue machine: ");
+        readFile();
     }
     public static int start(){
 
@@ -141,6 +100,50 @@ if (answerInt==1) {
     public static void two(Product two){
         String answerTwo = two.examine();
         System.out.println(answerTwo);
+    }
+
+    public static void createFile(){
+        try {
+            File myObj = new File("amount.txt");
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public static void saveFile(int amount){
+        try {
+            FileWriter myWriter = new FileWriter("amount.txt");
+            //myWriter.write("Files in Java might be tricky, but it is fun enough!");
+            myWriter.write(amount);
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    public static void readFile(){
+        //String amounts;
+        try {
+            File myObj = new File("amount.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        //return data;
     }
 
 }
