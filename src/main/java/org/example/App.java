@@ -1,5 +1,9 @@
 package org.example;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 import static org.example.App.start;
@@ -10,14 +14,57 @@ public class App
     public static int answerInt;
     public static void main( String[] args )
     {
-        int tryInt = start();
+        int amount = start();
+        Scanner scNr1 = new Scanner(System.in);
+        String question = scNr1.nextLine();
+        answerInt = Integer.parseInt(question);
 
+
+        try {
+            File myObj = new File("amount.txt");
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+
+
+            try {
+                FileWriter myWriter = new FileWriter("amount.txt");
+                myWriter.write("Files in Java might be tricky, but it is fun enough!");
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+
+if (answerInt==1) {
+    try {
+        File myObj = new File("amount.txt");
+        Scanner myReader = new Scanner(myObj);
+        while (myReader.hasNextLine()) {
+            String data = myReader.nextLine();
+            System.out.println(data);
+        }
+        myReader.close();
+    } catch (FileNotFoundException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+    }
+
+}
         //start();
 
     }
     public static int start(){
 
-        int answer; //
+        int answer;
         boolean quit = false;
         int amount;
 
@@ -77,7 +124,7 @@ public class App
                 vendingMachine.money.cashByUser();
             }
         }while(quit==false);
-        return 0; //Program finish at this place
+        return amount; //Program finish at this place
     }
 
 
