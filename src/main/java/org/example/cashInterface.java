@@ -4,36 +4,22 @@ public class cashInterface {
     int spaceForMoney;
     int[] money = new int[10];
 
-    /*public enum cBU{
-        kr1,
-        kr2,
-        kr5,
-        kr10,
-        kr20,
-        kr50,
-        kr100,
-        kr200,
-        kr500,
-        kr1000;}*/
-    //cBU[] cBUArray = cBU.values();
-
-
     public cashInterface(int spaceForMoney) {
         this.spaceForMoney = spaceForMoney;
         for(int i=0;i<money.length;i++){
             money[i]=spaceForMoney;
-            System.out.println(money[i]);
         }
+        System.out.println("Each money slot is loaded with 10 bills/coins");
     }
 
     public void cashInterface() {
         for(int i=0;i<money.length;i++){
             money[i]=spaceForMoney;
-            System.out.println(money[i]);
+
         }
     }
     public int depositMoneySlot(int deposit) {
-        //System.out.println(deposit);
+
         switch (deposit) {
             case 1:
                 money[0] = money[0] + 1;
@@ -77,7 +63,7 @@ public class cashInterface {
     }
     public void giveMoneyBack(int amount) {
         do {
-            //System.out.println("You will get " + amount + " back. ");
+
             if (amount > 999) {
                 money[0] = money[0] + 1;
                 amount = amount - 1000;
@@ -129,7 +115,7 @@ public class cashInterface {
     }
     public void cashByUser(){
         int i=-1;
-        System.out.println("Revenue for each money slot");
+        System.out.println("Amount of money in each money slot");
         for(cashRepresentation slots:cashRepresentation.values()) {
             ++i;
             System.out.println(slots + ": "+ money[i]);

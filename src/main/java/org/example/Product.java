@@ -4,7 +4,7 @@ abstract class Product {
     String name;
     int amount;
     int productId;
-    //String examine;
+
 
     public Product(String name, int amount){
         this.name = name;

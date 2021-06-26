@@ -27,10 +27,9 @@ public class Mainmenu {
         return answerInt;
     }
     public String mainMenuScanner(int amount){
-        //if (amount!=99999) {
+
         Scanner scNr1 = new Scanner(System.in);
         answer = scNr1.nextLine(); // holds actual input
-        //} else answer = "7";
         return answer;
     }
 }

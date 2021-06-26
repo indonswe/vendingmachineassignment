@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static org.example.App.start;
+
 
 public class App
 {
@@ -15,16 +15,8 @@ public class App
     public static void main( String[] args )
     {
         int amount = start();
-        String readFileAmount;
-        System.out.println("Revenue machine today: "+ amount);
-        String amountString = String.valueOf(amount);
-        createFile();
-        readFileAmount = readFile();
-        System.out.println("Revenue machine earlier: "+ readFileAmount);
-        int totalRevenue = amount + Integer.parseInt(readFileAmount);
-        amountString = String.valueOf(totalRevenue);
-        saveFile(amountString);
-        System.out.println("Total revenue machine: "+ totalRevenue);
+        fileEnablingMethod(amount);
+
     }
     public static int start(){
 
@@ -89,7 +81,7 @@ public class App
                 vendingMachine.money.cashByUser();
             }
         }while(quit==false);
-        return Moneypool.totalInvested; //Program finish at this place
+        return Moneypool.totalInvested;
     }
 
 
@@ -125,7 +117,7 @@ public class App
     public static void saveFile(String amount){
         try {
             FileWriter myWriter = new FileWriter("amount.txt");
-            //myWriter.write("Files in Java might be tricky, but it is fun enough!");
+
             myWriter.write(amount);
             myWriter.close();
             System.out.println("Successfully wrote to the file.");
@@ -151,6 +143,19 @@ public class App
             e.printStackTrace();
         }
         return amount;
+    }
+
+    public static void fileEnablingMethod(int amount){
+        String readFileAmount;
+        System.out.println("Revenue machine today: "+ amount);
+        //String amountString = String.valueOf(amount);
+        createFile();
+        readFileAmount = readFile();
+        System.out.println("Revenue machine earlier: "+ readFileAmount);
+        int totalRevenue = amount + Integer.parseInt(readFileAmount);
+        String amountString = String.valueOf(totalRevenue);
+        saveFile(amountString);
+        System.out.println("Total revenue machine: "+ totalRevenue);
     }
 
 }

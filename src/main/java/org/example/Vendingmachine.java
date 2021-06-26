@@ -23,10 +23,6 @@ public class Vendingmachine implements vendingMachineInterface{
 
     public Vendingmachine(){
 
-
-
-
-
         //Creating the products
 
         Chocolade snickers = new Chocolade("Snickers", 8) {

@@ -16,37 +16,3 @@ abstract class Covid19 extends Product {
     }
 }
 
-/*class Zinc extends Covid19{
-
-    public Zinc(String name, int amount) {
-        super(name, amount);
-    }
-
-    @Override
-    public String examine(){
-        return toString("Zinc: price 50 kr, kill virus if you can get it into the cells");
-    }
-
-    private String toString(String s) {
-        return s;
-    }
-
-
-}
-class Quercetin extends Covid19{
-
-    public Quercetin(String name, int amount) {
-        super(name, amount);
-    }
-
-    @Override
-    public String examine(){
-        return toString("Quercetin: price 300 kr, helps Zinc getting into virus cells");
-    }
-
-    private String toString(String s) {
-        return s;
-    }
-
-
-}*/
