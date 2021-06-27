@@ -104,9 +104,9 @@ public class App
         try {
             File myObj = new File("amount.txt");
             if (myObj.createNewFile()) {
-                System.out.println("File created: " + myObj.getName());
+                //System.out.println("File created: " + myObj.getName());
             } else {
-                System.out.println("File already exists.");
+                //System.out.println("File already exists.");
             }
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -134,7 +134,7 @@ public class App
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                System.out.println(data);
+                //System.out.println(data);
                 amount = data;
             }
             myReader.close();
