@@ -1,7 +1,7 @@
 package org.example;
 
 public class Productsequencer {
-    private static int productId = -1;
+    private static int productId = 0;
 
 
     public static int nextProductId(){
@@ -9,7 +9,7 @@ public class Productsequencer {
         return productId;
     }
     public static void reset() {
-        Productsequencer.productId = -1;
+        Productsequencer.productId = 0;
     }
 
 }

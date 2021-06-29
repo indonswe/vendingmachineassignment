@@ -59,14 +59,13 @@ public class cashInterface {
 
                 return 0;
         }
-        //System.out.println(money[7]);
         return deposit;
     }
     public void giveMoneyBack(int amount) {
         do {
 
             if (amount > 999) {
-                money[0] = money[0] + 1;
+                money[0] = money[0] - 1;
                 amount = amount - 1000;
                 System.out.println("Machine output 1000kr");
             } else if (amount > 499) {

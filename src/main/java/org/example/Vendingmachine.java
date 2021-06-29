@@ -6,20 +6,9 @@ public class Vendingmachine implements vendingMachineInterface{
 
     private static Product[] productArray   = new Product[7]; //Giving space for products in the machine
 
+    Moneypool moneypool= new Moneypool(0);
+
     cashInterface money = new cashInterface(10); // Filling the machine with money
-
-    //Creating the customer money pool
-
-    Product moneyPool = new Product("customerPool", 0) {
-        @Override
-        public String examine() {
-            return null;
-        }
-        @Override
-        public String use() {
-            return null;
-        }
-    };
 
     public Vendingmachine(){
 
@@ -69,7 +58,7 @@ public class Vendingmachine implements vendingMachineInterface{
 
         //Loading the machine
 
-        Vendingmachine.productArray[0]= moneyPool;
+        Vendingmachine.productArray[0]= null;
         Vendingmachine.productArray[1]= snickers;
         Vendingmachine.productArray[2]= paradis;
         Vendingmachine.productArray[3]= cocacola;
@@ -85,7 +74,7 @@ public class Vendingmachine implements vendingMachineInterface{
         if (amount>-1){
            amount = money.depositMoneySlot(amount);
         }else{ }
-        productArray[0].amount = productArray[0].amount+ amount;
+        moneypool.amount = moneypool.amount + amount;
     }
 
     @Override
@@ -97,7 +86,7 @@ public class Vendingmachine implements vendingMachineInterface{
     @Override
     public int endSession() {
         int amount = productArray[0].amount;
-        productArray[0].amount = 0;
+        moneypool.amount = 0;
         return amount;
     }
 
@@ -110,7 +99,7 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public int getBalance() {
-        return productArray[0].amount;
+        return moneypool.amount;
     }
 
     @Override
@@ -118,7 +107,7 @@ public class Vendingmachine implements vendingMachineInterface{
         Product[] onlyProductsArray = Arrays.copyOf(productArray, productArray.length-1);
         String prodIdAndNames;
         String[]stringProductsArray= new String[onlyProductsArray.length];
-        //Getting the products but not the moneypool
+        //Getting the products
         for (int i = 0, j = 1; i < productArray.length-1; i++, j++) {
             onlyProductsArray[i]= productArray[j];
             prodIdAndNames = ("Productid: "+onlyProductsArray[i].productId+" Name: "+onlyProductsArray[i].name);

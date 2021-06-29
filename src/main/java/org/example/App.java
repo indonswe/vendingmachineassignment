@@ -30,7 +30,6 @@ public class App
             Mainmenu mainmenu = new Mainmenu();// handle main menu
             amount = vendingMachine.getBalance();
             answer = mainmenu.menuPrintOut(amount);
-            //if (testAnswer>0) answer = testAnswer;
             if (answer == 1) {
                 String[] getProducts = vendingMachine.getProducts();
                 one(getProducts);
@@ -148,7 +147,6 @@ public class App
     public static void fileEnablingMethod(int amount){
         String readFileAmount;
         System.out.println("Revenue machine today: "+ amount);
-        //String amountString = String.valueOf(amount);
         createFile();
         readFileAmount = readFile();
         System.out.println("Revenue machine earlier: "+ readFileAmount);
