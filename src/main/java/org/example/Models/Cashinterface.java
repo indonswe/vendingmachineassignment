@@ -1,10 +1,12 @@
-package org.example;
+package org.example.Models;
 
-public class cashInterface {
+import org.example.Data.Cashrepresentation;
+
+public class Cashinterface {
     int spaceForMoney;
     int[] money = new int[10];
 
-    public cashInterface(int spaceForMoney) {
+    public Cashinterface(int spaceForMoney) {
         this.spaceForMoney = spaceForMoney;
         for(int i=0;i<money.length;i++){
             money[i]=spaceForMoney;
@@ -116,7 +118,7 @@ public class cashInterface {
     public void cashByUser(){
         int i=-1;
         System.out.println("Amount of money in each money slot");
-        for(cashRepresentation slots:cashRepresentation.values()) {
+        for(Cashrepresentation slots: Cashrepresentation.values()) {
             ++i;
             System.out.println(slots + ": "+ money[i]);
         }

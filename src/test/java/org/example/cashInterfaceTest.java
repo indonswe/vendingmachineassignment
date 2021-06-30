@@ -1,12 +1,7 @@
 package org.example;
 
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
 public class cashInterfaceTest {
-    Vendingmachine m = new Vendingmachine();
+    /*Vendingmachine m = new Vendingmachine();
     cashInterface moneyInterface;
     int[] money = new int[10];
 
@@ -74,5 +69,5 @@ public class cashInterfaceTest {
         actual=moneyInterface.money[5];
 
         assertEquals(expected,actual);
-    }
+    }*/
 }

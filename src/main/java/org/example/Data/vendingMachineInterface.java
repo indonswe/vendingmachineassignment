@@ -1,6 +1,8 @@
-package org.example;
+package org.example.Data;
 
-interface vendingMachineInterface {
+import org.example.Models.Product;
+
+public interface vendingMachineInterface {
 
     void addCurrency(int amount);
     Product request(int productNumber);

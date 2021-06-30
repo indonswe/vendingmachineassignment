@@ -1,12 +1,14 @@
-package org.example;
+package org.example.Data;
 
-abstract class Drinks extends Product {
+import org.example.Models.Product;
+
+public abstract class Drinks extends Product {
     public Drinks(String name, int amount) {
         super(name, amount);
     }
 
     public abstract String examine();
-    String toString(String s) {
+    protected String toString(String s) {
         return s;
     }
 

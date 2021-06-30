@@ -1,14 +1,19 @@
-package org.example;
+package org.example.Models;
+
+import org.example.Data.Chocolade;
+import org.example.Data.Covid19;
+import org.example.Data.Drinks;
+import org.example.Data.vendingMachineInterface;
 
 import java.util.Arrays;
 
-public class Vendingmachine implements vendingMachineInterface{
+public class Vendingmachine implements vendingMachineInterface {
 
     private static Product[] productArray   = new Product[7]; //Giving space for products in the machine
 
     Moneypool moneypool= new Moneypool(0);
 
-    cashInterface money = new cashInterface(10); // Filling the machine with money
+    public Cashinterface money = new Cashinterface(10); // Filling the machine with money
 
     public Vendingmachine(){
 
@@ -85,8 +90,9 @@ public class Vendingmachine implements vendingMachineInterface{
 
     @Override
     public int endSession() {
-        int amount = productArray[0].amount;
+        //int amount = productArray[0].amount;
         moneypool.amount = 0;
+        int amount = moneypool.amount;
         return amount;
     }
 

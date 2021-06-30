@@ -1,9 +1,9 @@
 package org.example;
 
+import org.example.Models.Vendingmachine;
+import org.example.Sequencers.Productsequencer;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ChocoladeTest {
 

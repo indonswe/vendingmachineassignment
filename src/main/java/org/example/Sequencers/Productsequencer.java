@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Sequencers;
 
 public class Productsequencer {
     private static int productId = 0;

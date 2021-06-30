@@ -1,6 +1,6 @@
-package org.example;
+package org.example.Data;
 
-public enum cashRepresentation {
+public enum Cashrepresentation {
     kr1,
     kr2,
     kr5,

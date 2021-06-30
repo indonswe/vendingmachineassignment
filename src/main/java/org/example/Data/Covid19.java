@@ -1,12 +1,14 @@
-package org.example;
+package org.example.Data;
 
-abstract class Covid19 extends Product {
+import org.example.Models.Product;
+
+public abstract class Covid19 extends Product {
     public Covid19(String name, int amount) {
         super(name, amount);
     }
 
     public abstract String examine();
-    String toString(String s) {
+    protected String toString(String s) {
         return s;
     }
 

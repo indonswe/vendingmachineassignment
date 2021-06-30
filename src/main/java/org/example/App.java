@@ -1,5 +1,10 @@
 package org.example;
 
+import org.example.Models.Mainmenu;
+import org.example.Models.Moneypool;
+import org.example.Models.Product;
+import org.example.Models.Vendingmachine;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

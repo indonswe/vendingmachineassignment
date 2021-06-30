@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.Models.Mainmenu;
+import org.example.Models.Vendingmachine;
 import org.junit.Before;
 import org.junit.Test;
 
