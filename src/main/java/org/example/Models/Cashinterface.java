@@ -123,6 +123,9 @@ public class Cashinterface {
             System.out.println(slots + ": "+ money[i]);
         }
     }
+    public int[] methodForTests(){
+        return money;
+    }
 
 }
 

@@ -44,9 +44,9 @@ public class vendingMachineInterfaceTest {
 
     @Test
     public void endSession() {
-        int expected = 50;
+        int expected = 0;
 
-        m.addCurrency(50);
+        //m.addCurrency(50);
         int actual = m.endSession();
 
         assertEquals(expected,actual);
@@ -54,11 +54,14 @@ public class vendingMachineInterfaceTest {
 
     @Test
     public void getDescription() {
-        /*Paradis expected = new Paradis("Paradis", 39);
 
-        Product actual = m.request(2);*/
+        String expected = "Paradis, vikt: 500 gram, pris: 39 kr, kcal: 2500.";
 
-        //assertEquals(expected.examine,actual.examine);
+        String actual = m.getDescription(2);
+
+        System.out.println(actual);
+
+        assertEquals(expected,actual);
 
     }
 
